@@ -10,7 +10,7 @@ import numpy as np
 import time
 
 
-def predict_sentiment(img,model):
+def predict_sentiment(img,model,show_time=False):
 	"""
 	Predicts the sentiment of a single image
 	"""
@@ -20,7 +20,7 @@ def predict_sentiment(img,model):
 	preds = model.predict(face) # generate prediction array
 	end=time.time()
 	elapsed = end-start
-	print(f'One prediction made in {elapsed:.4f}s')
+	#print(f'One prediction made in {elapsed:.4f}s')
 	prediction = emotion_list[preds.argmax()] # index emotion list based on index of highest prediction
 	return prediction
 
