@@ -10,7 +10,7 @@ import time
 import tensorflow as tf
 
 cap = cv2.VideoCapture(0)
-model = tf.keras.models.load_model('../Models/emotion-detection-model-A-opencv.h5')
+model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
 
 while True:
 	ret, frame = cap.read() # Capture the video feed frame
