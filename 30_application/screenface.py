@@ -29,21 +29,25 @@ while True:
 	for face in croped:
 		sentiments.append(predict_sentiment(face,model))
 	box_faces(frame,faces,sentiments,size=0)
-	print(f"{len(faces)} faces detected.")
 	sent_dict = {x:sentiments.count(x) for x in sentiments}
 
 	end=time.time()
 	elapsed = end-start
-	print(f'Frame {frame_trac}, time elapsed: {elapsed :.4f}s')
+	# print(f'Frame {frame_trac}, time elapsed: {elapsed :.4f}s')
 	# Get the 6 frame-average sentiment
 	for x in sent_dict.keys():
 		sent_log[x] += sent_dict[x]
 
-	if frame_trac%6 == 0:
+	if frame_trac%2 == 0:
 		for x in sent_log.keys():
-			sent_log[x] /= 6
+			sent_log[x] /= 2
 			sent_log[x] = round(sent_log[x],3)
-		print(sent_log)
+		print('\n\n')
+		print(f"{len(faces)} faces detected.")
+		for item in sent_log.items():
+			print(item)
+		print('\n\n')
+		
 
 	resize = cv2.resize(frame, (854,480))
 	cv2.imshow('frame',resize)

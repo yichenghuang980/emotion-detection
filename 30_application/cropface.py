@@ -22,7 +22,7 @@ def predict_sentiment(img,model,show_time=False):
 	preds = model.predict(face) # generate prediction array
 	end=time.time()
 	elapsed = end-start
-	print(f'One prediction made in {elapsed:.4f}s')
+	#print(f'One prediction made in {elapsed:.4f}s')
 	prediction = emotion_list[preds.argmax()] # index emotion list based on index of highest prediction
 	return prediction
 
