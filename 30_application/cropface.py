@@ -8,7 +8,9 @@ import cv2
 import click
 import numpy as np
 import time
+import tensorflow as tf
 
+model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
 
 def predict_sentiment(img,model,show_time=False):
 	"""
@@ -20,7 +22,7 @@ def predict_sentiment(img,model,show_time=False):
 	preds = model.predict(face) # generate prediction array
 	end=time.time()
 	elapsed = end-start
-	#print(f'One prediction made in {elapsed:.4f}s')
+	print(f'One prediction made in {elapsed:.4f}s')
 	prediction = emotion_list[preds.argmax()] # index emotion list based on index of highest prediction
 	return prediction
 
@@ -37,7 +39,7 @@ def detect_face(img, verbose=False):
         print(f"Detected faces: {face_cnt}")
     return faces
 
-def box_faces(img,face_dict,sentiments = {}, size=' ',label=True):
+def box_faces(img,face_dict = {},sentiments = {}, size=' ',label=True):
     """
     Draws a box around the faces in the image file
     Use the size parameter to set a lower bound for detected face size
@@ -101,27 +103,22 @@ def crop_face(img, showimg = False):
 
 @click.command()
 @click.option('--fname')
-def crop_face_fromfile(fname):
+def crop_face_fromfile(fname,showing=False):
     img = cv2.imread(fname)
 
+    gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+
     faces = detect_face(img,verbose=True)
+    croped = [crop(gray, face) for face in faces]
+    print(croped)
+    sentiments = []
+    for face in croped:
+        cv2.imshow('face',face)
+        sentiments.append(predict_sentiment(face,model))
+    box_faces(img,faces,sentiments,size=0)
+    cv2.imwrite('img1.jpg',img)
 
-    # box_faces(img,faces)
-
-    show_image('img', img)
-
-    face_captures = []
-    i=0
-    for face in faces:
-        lastimg = crop(img,face)
-        i += 1
-        filename = f'image{i}.jpg'
-        face_captures.append(filename)
-        cv2.imwrite(filename, lastimg)
-
-    for image in face_captures:
-    	face = cv2.imread(image)
-    	show_image('face', face)
+    
 
 if __name__ == "__main__":
 	crop_face_fromfile()
