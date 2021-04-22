@@ -1,1 +1,1 @@
-## Model structure and weights in .json/h5
+# This folder contains model structure and trained weights in .h5 files.
