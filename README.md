@@ -1,7 +1,8 @@
 # 1. Introduction
 
 
-> The goal of this project is to present a final application that can help content presenters to evaluate the overall performance of the conference and improve communication efficiency. Specifically, this application detects real time facial expressions/engagement of the audience using a convolutional neural network in a video conference setting and assesses the overall sentiment/engagement. For this progress report, the goal is to evaluate the performance of different CNN architectures to detect facial expression.
+The goal of this project is to present a final application that can help content presenters to evaluate the overall performance of the conference and improve communication efficiency. Specifically, this application detects real time facial expressions/engagement of the audience using a convolutional neural network in a video conference setting and assesses the overall sentiment/engagement. For this progress report, the goal is to evaluate the performance of different CNN architectures to detect facial expression.
+
 
 # 2. Demo Video
 
