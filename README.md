@@ -10,11 +10,11 @@ For this progress report, the goal is to evaluate the performance of different C
 
 [![](http://img.youtube.com/vi/atmCf3voXn4/0.jpg)](https://youtu.be/atmCf3voXn4)
 
-Example Input:
+Example Zoom Gallery View:
 
-![](/01_images/exampleInput.png)
+![](/01_images/zoom.png)
 
-Example Output:
+Example Static Image Output:
 
 ![](/01_images/exampleOutput.png)
 
