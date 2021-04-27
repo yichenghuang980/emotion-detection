@@ -4,19 +4,11 @@ The goal of this project is to present a final application that can help content
 
 Specifically, this application detects real time facial expressions/engagement of the audience using a convolutional neural network in a video conference setting and assesses the overall sentiment/engagement. 
 
-For this progress report, the goal is to evaluate the performance of different CNN architectures to detect facial expression.
+For more information, please refer to the ![Full Report](https://github.com/yichenghuang980/emotion-detection/blob/master/Final_Report.pdf)
 
 # 2. Demo Video
 
 [![](http://img.youtube.com/vi/atmCf3voXn4/0.jpg)](https://youtu.be/atmCf3voXn4)
-
-Example Zoom Gallery View:
-
-![](/01_images/zoom.png)
-
-Example Static Image Output:
-
-![](/01_images/exampleOutput.png)
 
 # 3. Setup Instruction
 
