@@ -1,5 +1,5 @@
-opencv-python
+opencv-python==4.5.1.48
 click
 Pillow
-tensorflow
+tensorflow==2.3.0
 h5py==2.10.0
