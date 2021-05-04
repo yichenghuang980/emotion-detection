@@ -10,7 +10,8 @@ from cropface import detect_face, box_faces, crop, predict_sentiment
 import tensorflow as tf
 import time
 
-model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
+#model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
+model = tf.keras.models.load_model('../40_models/model_ResNet.h5')
 frame_trac = 0
 sent_log = {'Angry':0,'Disgust':0,'Fear':0,'Happy':0,'Sad':0,'Surprise':0,'Neutral':0}
 

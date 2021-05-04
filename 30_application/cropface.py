@@ -10,7 +10,8 @@ import numpy as np
 import time
 import tensorflow as tf
 
-model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
+#model = tf.keras.models.load_model('../40_models/emotion-detection-model-A-opencv.h5')
+model = tf.keras.models.load_model('../40_models/model_ResNet.h5')
 
 def predict_sentiment(img,model,show_time=False):
 	"""
